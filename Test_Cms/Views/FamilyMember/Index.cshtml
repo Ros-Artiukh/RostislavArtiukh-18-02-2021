@@ -1,0 +1,19 @@
+﻿@model Task<List<Target>>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Family Memebers Book</h1>
+    <table class="table">
+        <thead>
+            <tr><th>Name</th><th>Number</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var target in await Model)
+            {
+                <tr><td>@target.ContactsName</td><td>@target.Number</td><td>@target.IsActive</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
